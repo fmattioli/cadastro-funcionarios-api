@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gerenciamento.Funcionarios.Application\Gerenciamento.Funcionarios.Application.csproj" />
+    <ProjectReference Include="..\Gerenciamento.Funcionarios.Data\Gerenciamento.Funcionarios.Data.csproj" />
+  </ItemGroup>
+
+</Project>
