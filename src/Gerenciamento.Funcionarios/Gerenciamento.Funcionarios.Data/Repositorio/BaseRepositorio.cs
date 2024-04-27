@@ -15,6 +15,14 @@ namespace Gerenciamento.Funcionarios.Data.Repositorio
             _collection = mongoDb.GetCollection<TEntity>(collectionName);
         }
 
+        public async Task<TEntity> FindOneAsync(Guid id)
+        {
+            var filter = Builders<TEntity>.Filter.Eq("_id", id);
+            var result = await _collection.Find(filter).FirstOrDefaultAsync();
+
+            return result;
+        }
+
         public async Task AddOneAsync(TEntity entity)
         {
             await _collection.InsertOneAsync(entity);

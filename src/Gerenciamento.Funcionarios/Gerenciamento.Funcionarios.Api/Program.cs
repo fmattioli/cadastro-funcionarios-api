@@ -1,11 +1,21 @@
+using Gerenciamento.Funcionarios.CrossCutting.Model;
+using Gerenciamento.Funcionarios.CrossCutting.Mongo;
+using Gerenciamento.Funcionarios.CrossCutting.Repositorios;
+using Gerenciamento.Funcionarios.CrossCutting.Services;
+using Gerenciamento.Funcionarios.CrossCutting.Validators;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+builder.Services
+    .AddRepositorios()
+    .AddEndpointsApiExplorer()
+    .AddSwaggerGen()
+    .AddValidators()
+    .AddServicos()
+    .AddControllers(options => options.Filters.Add(typeof(ActionValidationAttribute)));
 
 var app = builder.Build();
 

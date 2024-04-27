@@ -2,7 +2,7 @@
 
 namespace Gerenciamento.Funcionarios.Dominio.Interfaces
 {
-    public interface IEmpresa : IBaseRepositorio<Empresa>
+    public interface IEmpresaRepositorio : IBaseRepositorio<Empresa>
     {
     }
 }

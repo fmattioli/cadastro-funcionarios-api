@@ -9,6 +9,6 @@ namespace Gerenciamento.Funcionarios.Dominio.Entidades
         public Guid Id { get; set; } = id;
         public string Nome { get; set; } = nome;
         public string CNPJ { get; set; } = cnpj;
-        public IEnumerable<Endereco> Endereco { get; set; } = endereco;
+        public IEnumerable<Endereco> Enderecos { get; set; } = endereco;
     }
 }
